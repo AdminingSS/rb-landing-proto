@@ -1,0 +1,49 @@
+.uk-container {
+  max-width: 1600px;
+}
+
+.uk-background-primary {
+  background-color: @global-primary-background;
+}
+
+.uk-background-secondary {
+  background-color: @global-secondary-background;
+}
+
+.uk-background-muted {
+  background-color: @global-muted-background;
+}
+
+.uk-background-default {
+  background-color: @global-default-background;
+}
+
+.uk-button {
+  text-transform: none;
+  padding: 0 40px;
+  font-size: @global-medium-font-size;
+  line-height: 54px;
+  border-radius: 3px;
+}
+
+.uk-button-default {
+  color: @global-color;
+  border-color: @global-color;
+  border-width: 2px;
+
+  &:hover {
+    color: @global-color;
+    border-color: lighten(@global-color, 40%);
+  }
+}
+
+.uk-navbar-nav>li>a {
+  font-family: @global-font-family;
+  font-weight: normal;
+  font-size: @global-medium-font-size;
+  color: @global-inverse-color;
+
+  &:hover {
+    color: darken(@global-inverse-color, 40%);
+  }
+}

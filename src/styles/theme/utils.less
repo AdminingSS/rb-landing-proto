@@ -1,0 +1,17 @@
+.tm-inverse {
+  color: @global-inverse-color;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: @global-inverse-color;
+  }
+
+  &.uk-button-default, .uk-button-default {
+    border-color: @global-inverse-color;
+    color: @global-inverse-color;
+
+    &:hover, &:focus {
+      border-color: darken(@global-inverse-color, 40%);
+      //color: darken(@global-inverse-color, 20%);
+    }
+  }
+}

@@ -1,0 +1,137 @@
+.tm-main {
+  position: relative;
+  height: 100vh;
+  min-height: 480px;
+  box-sizing: border-box;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  &::after {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+  }
+
+  .tm-main-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: @global-inverse-color;
+    z-index: 2;
+    text-align: center;
+  }
+}
+
+.tm-sub-h1 {
+  font-size: @global-large-font-size;
+  margin-bottom: 40px;
+}
+
+.tm-panel-horizontal {
+  position: relative;
+  height: 240px;
+  box-sizing: border-box;
+  background-color: @global-default-background;
+  display: block;
+  //justify-content: space-between;
+  //align-items: flex-end;
+  border-radius: 10px;
+
+  padding: 40px;
+  color: @global-color;
+  overflow: hidden;
+
+  .tm-panel-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    //-webkit-background-size: cover;
+    //background-size: cover;
+    //background-position: 50% 50%;
+    opacity: 0.5;
+    transition: all 500ms;
+  }
+
+  .tm-panel-header {
+    font-size: @global-large-font-size;
+    font-weight: bold;
+  }
+
+  .tm-panel-subheader {
+    font-size: @global-medlarge-font-size;
+
+    span {
+      font-weight: bold;
+    }
+  }
+
+  .tm-panel-place {
+    font-size: @global-medium-font-size;
+  }
+
+  &.tm-inverse {
+    background-color: #000000;
+    color: @global-inverse-color;
+
+    &:hover {
+      color: @global-inverse-color;
+    }
+  }
+
+  &:hover {
+    color: @global-color;
+    text-decoration: none;
+
+    .tm-panel-bg {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.tm-featured {
+  background-color: @global-muted-background;
+}
+
+.tm-content-right {
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  z-index: 10;
+}
+
+.tm-advertising {
+  font-size: @global-large-font-size;
+
+  h2 {
+    font-size: 48px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: @global-medium-font-size;
+  }
+
+  &.tm-inverse {
+    background-color: #000000;
+  }
+}
+
+.tm-bg-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-height: 100%;
+  max-width: 60%;
+}
