@@ -1,3 +1,27 @@
+.tm-navbar-scrolled {
+  background-color: @global-muted-background;
+
+  .uk-navbar-nav>li>a {
+    color: @global-color;
+
+    &:hover, &:active {
+      background-color: @global-primary-background;
+      color: @global-inverse-color;
+    }
+  }
+
+  .uk-logo {
+    background: url("../../images/logo.png") no-repeat;
+    background-position: 0 50%;
+  }
+
+  .uk-navbar-dropdown {
+    background-color: @global-primary-background;
+    border-color: @global-primary-background;
+    border-radius: 0;
+  }
+}
+
 .tm-main {
   position: relative;
   height: 100vh;
@@ -46,6 +70,7 @@
   //justify-content: space-between;
   //align-items: flex-end;
   border-radius: 10px;
+  line-height: 1.2;
 
   padding: 40px;
   color: @global-color;
@@ -67,10 +92,12 @@
   .tm-panel-header {
     font-size: @global-large-font-size;
     font-weight: bold;
+    margin-bottom: 20px;
   }
 
   .tm-panel-subheader {
     font-size: @global-medlarge-font-size;
+    margin-bottom: 20px;
 
     span {
       font-weight: bold;
@@ -79,6 +106,13 @@
 
   .tm-panel-place {
     font-size: @global-medium-font-size;
+  }
+
+  .tm-panel-controls {
+
+    .uk-button {
+      width: 250px;
+    }
   }
 
   &.tm-inverse {
@@ -104,34 +138,83 @@
   background-color: @global-muted-background;
 }
 
-.tm-content-right {
+.tm-content-right, .tm-content-left {
   position: relative;
   width: 50%;
-  margin-left: auto;
   z-index: 10;
+}
+
+.tm-content-right {
+  margin-left: auto;
+}
+
+.tm-content-left {
+  margin-right: auto;
+}
+
+.tm-bg-left, .tm-bg-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  //max-height: 100%;
+  //max-width: 60%;
+}
+
+.tm-bg-left {
+  left: 0;
+}
+
+.tm-bg-right {
+  right: 0;
 }
 
 .tm-advertising {
   font-size: @global-large-font-size;
 
   h2 {
+    position: relative;
     font-size: 48px;
     text-transform: uppercase;
+    color: @global-color;
+    transition: color 1s;
+
+    &::before {
+      position: absolute;
+      display: block;
+      background-color: @global-secondary-background;
+      top: 0;
+      bottom: 0;
+      right: -50px;
+      transform: translateX(-5%) skewX(5deg);
+      content: '';
+      z-index: -1;
+      left: 3000px;
+      transition: left 1s;
+    }
+
+    &.animate-left::before {
+      transform: translateX(5%) skewX(-5deg);
+      left: -50px;
+      right: 3000px;
+      transition: right 1s;
+    }
+
+    &.animated {
+      color: @global-inverse-color;
+
+      &::before {
+        left: 0;
+      }
+
+      &.animate-left::before {
+        left: -50px;
+        right: 0;
+      }
+    }
   }
 
   p {
     font-size: @global-medium-font-size;
   }
-
-  &.tm-inverse {
-    background-color: #000000;
-  }
 }
 
-.tm-bg-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-height: 100%;
-  max-width: 60%;
-}

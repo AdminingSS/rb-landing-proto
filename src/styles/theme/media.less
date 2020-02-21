@@ -1,0 +1,129 @@
+@media (max-width: 1599px) {
+  .tm-panel-horizontal {
+    //height: 240px;
+    //border-radius: 10px;
+    padding: 20px;
+
+    .tm-panel-header {
+      font-size: @global-medlarge-font-size;
+    }
+
+    .tm-panel-subheader {
+      font-size: @global-medium-font-size;
+    }
+
+    .tm-panel-place {
+      font-size: @global-font-size;
+    }
+
+    .tm-panel-controls {
+      .uk-button {
+        width: 170px;
+        font-size: @global-font-size;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .uk-navbar-nav > li > a {
+    font-size: @global-font-size;
+  }
+}
+
+@media (max-width: 959px) {
+
+  html {
+    font-size: @global-small-font-size;
+  }
+
+  h1 {
+    font-size: @global-xlarge-font-size;
+  }
+
+  h2 {
+    font-size: @global-large-font-size;
+  }
+
+  .tm-advertising {
+    font-size: @global-medlarge-font-size;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: @global-font-size;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .tm-content-right, .tm-content-left {
+    width: 100%;
+  }
+
+  .tm-panel-horizontal {
+    height: auto;
+    padding: 10px;
+    line-height: 1;
+
+    .tm-panel-header {
+      font-size: @global-medium-font-size;
+      margin-bottom: 10px;
+    }
+
+    .tm-panel-subheader {
+      font-size: @global-font-size;
+      margin-bottom: 10px;
+    }
+
+    .tm-panel-place {
+      font-size: @global-small-font-size;
+    }
+
+    .tm-panel-controls {
+      .uk-button {
+        width: 100%;
+      }
+    }
+  }
+
+  .tm-advertising {
+    font-size: @global-medium-font-size;
+
+    h2 {
+      font-size: @global-medlarge-font-size;
+      padding: 0 10px;
+
+      &::before {
+        right: 0;
+        transform: none;
+        left: 3000px;
+        transition: left 1s;
+      }
+
+      &.animate-left::before {
+        transform: none;
+        left: 0;
+        right: 3000px;
+        transition: right 1s;
+      }
+
+      &.animated {
+        &::before {
+          left: 0;
+        }
+
+        &.animate-left::before {
+          right: 0;
+        }
+      }
+    }
+
+    p {
+      font-size: @global-font-size;
+    }
+  }
+}

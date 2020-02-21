@@ -1,3 +1,7 @@
+.uk-section {
+  overflow: hidden;
+}
+
 .uk-container {
   max-width: 1600px;
 }
@@ -32,8 +36,10 @@
   border-width: 2px;
 
   &:hover {
-    color: @global-color;
-    border-color: lighten(@global-color, 40%);
+    color: @global-inverse-color;
+    border-color: @global-primary-background;
+    background-color: @global-primary-background;
+    //border-color: lighten(@global-color, 40%);
   }
 }
 
@@ -44,6 +50,39 @@
   color: @global-inverse-color;
 
   &:hover {
-    color: darken(@global-inverse-color, 40%);
+    color: darken(@global-inverse-color, 20%);
   }
+}
+
+.uk-logo {
+  display: block;
+  width: 186px;
+  height: 60px;
+  background: url("../../images/logo-light.png") no-repeat;
+  -webkit-background-size: 186px 60px;
+  background-size: 186px 60px;
+  background-position: 0 50%;
+}
+
+.uk-drop {
+  width: auto;
+  margin-top: 0;
+}
+
+.uk-navbar-dropdown {
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid @global-inverse-color;
+}
+
+.uk-navbar-dropdown-nav>li>a {
+  color: @global-inverse-color;
+
+  &:hover {
+    color: darken(@global-inverse-color, 20%);
+  }
+}
+
+.uk-navbar-dropdown-nav {
+  font-size: @global-medium-font-size;
 }
